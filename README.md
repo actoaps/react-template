@@ -7,7 +7,7 @@ More specifically, it is designed to be a gradle submodule (it is however not a 
 * Material UI v1.4.0  
 * Webpack v4 setup, which allows HMR and [code-splitting using dynamic imports](https://github.com/jamiebuilds/react-loadable)  
 * [Cypress](https://www.cypress.io/) testing suite  
-* [Eslint](https://eslint.org/), with a version of the (StandardJS)[https://standardjs.com/] styleguide, using 4 spaces
+* [Eslint](https://eslint.org/), with a version of the [StandardJS](https://standardjs.com/) styleguide, using 4 spaces
 * Nginx config, including a dummy reverse-proxy for your API  
 * Dockerfile, for building your webserver, containing your react build  
 
