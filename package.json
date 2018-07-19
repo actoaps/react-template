@@ -23,9 +23,11 @@
   "homepage": "https://acto.dk",
   "dependencies": {
     "@material-ui/core": "~1.4.0",
+    "formik": "~1.0.1",
     "react": "~16.4.1",
     "react-dom": "~16.4.1",
-    "react-loadable": "~5.4.0"
+    "react-loadable": "~5.4.0",
+    "yup": "~0.25.1"
   },
   "devDependencies": {
     "babel-core": "~6.26.3",

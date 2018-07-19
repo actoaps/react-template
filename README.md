@@ -5,6 +5,7 @@ More specifically, it is designed to be a gradle submodule (it is however not a 
 ## Included in the template
 * React v16.4  
 * Material UI v1.4.0  
+* [Formik](https://github.com/jaredpalmer/formik) + [Yup](https://github.com/jquense/yup), for non rage inducing form handling
 * Webpack v4 setup, which allows HMR and [code-splitting using dynamic imports](https://github.com/jamiebuilds/react-loadable)  
 * [Cypress](https://www.cypress.io/) testing suite  
 * [Eslint](https://eslint.org/), with a version of the [StandardJS](https://standardjs.com/) styleguide, using 4 spaces
