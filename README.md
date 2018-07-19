@@ -2,19 +2,19 @@
 This is a template, for new React Projects @ Acto.  
 More specifically, it is designed to be a gradle submodule (it is however not a requirement).
 
-The template includes the following:
-* React v16.4
-* Material UI v1.4.0
-* Webpack v4 setup, which allows HMR and [code-splitting using dynamic imports](https://github.com/jamiebuilds/react-loadable)
-* [Cypress](https://www.cypress.io/) testing suite
-* Nginx config, including a dummy reverse-proxy for your API
+## Included in the template
+* React v16.4  
+* Material UI v1.4.0  
+* Webpack v4 setup, which allows HMR and [code-splitting using dynamic imports](https://github.com/jamiebuilds/react-loadable)  
+* [Cypress](https://www.cypress.io/) testing suite  
+* Nginx config, including a dummy reverse-proxy for your API  
 * Dockerfile, for building your webserver, containing your react build  
 
 ## Prerequisites
-* Node >= v8.11
-* Yarn
-* Chrome browser
-* Docker
+* Node >= v8.11  
+* Yarn  
+* Chrome browser  
+* Docker  
 
 ## Usage
 1. Clone the repo, and copy the contents to your desired location

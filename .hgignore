@@ -1,0 +1,7 @@
+syntax: glob
+
+node_modules/
+.gradle/
+.idea/
+build/
+*.iml
