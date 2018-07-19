@@ -7,6 +7,9 @@
     "test": "cross-env cypress run --browser chrome",
     "test-headless": "cross-env cypress run",
     "test-ci": "cross-env start-server-and-test dev http://localhost:3000 test-headless",
+    "lint": "cross-env eslint src/**/**.js config/**/**.js test/**/**.js",
+    "lint-fix": "cross-env eslint src/**/**.js config/**/**.js test/**/**.js --fix",
+    "profile": "cross-env NODE_ENV=production webpack --config=config/webpack.config.js --profile --json > stats.json",
     "cypress": "cross-env cypress open",
     "build": "cross-env NODE_ENV=production webpack --config=config/webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=config/webpack.config.js"
@@ -39,13 +42,51 @@
     "copy-webpack-plugin": "~4.5.2",
     "cross-env": "~5.2.0",
     "cypress": "~3.0.2",
+    "eslint": "~5.1.0",
+    "eslint-config-standard": "~11.0.0",
+    "eslint-config-standard-react": "~6.0.0",
+    "eslint-plugin-cypress": "~2.0.1",
+    "eslint-plugin-import": "~2.13.0",
+    "eslint-plugin-node": "~6.0.1",
+    "eslint-plugin-promise": "~3.8.0",
+    "eslint-plugin-react": "~7.10.0",
+    "eslint-plugin-standard": "~3.1.0",
     "html-webpack-plugin": "~3.2.0",
     "prop-types": "~15.6.2",
     "react-hot-loader": "~4.3.3",
     "start-server-and-test": "~1.5.0",
     "webpack": "~4.16.0",
-    "webpack-cli": "~3.0.8",
+    "webpack-cli": "~3.1.0",
     "webpack-dev-server": "~3.1.4",
     "webpack-merge": "~4.1.3"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ],
+      "react/jsx-indent": [
+        2,
+        4
+      ],
+      "react/jsx-indent-props": [
+        2,
+        4
+      ]
+    },
+    "plugins": [
+      "cypress"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "cypress/globals": true
+    }
   }
 }
