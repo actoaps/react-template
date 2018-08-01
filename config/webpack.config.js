@@ -87,9 +87,8 @@ if (TARGET === 'development' || !TARGET) {
             historyApiFallback: true,
             hot: true,
             proxy: {
-                [`${settings.proxy.apiPath}`]: {
-                    target: `http://localhost:${settings.proxy.apiPort}`
-                }
+                context: settings.proxy.paths,
+                target: `http://localhost:${settings.proxy.port}`
             }
         },
 

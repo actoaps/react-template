@@ -10,7 +10,7 @@ module.exports = {
         vendorLibs: 'react|react-dom' // separated by pipes
     },
     proxy: {
-        apiPath: '/api',
-        apiPort: 8080
+        paths: ['/api'],
+        port: 8080
     }
 }
