@@ -1,4 +1,4 @@
-# React Project Template
+# React Template
 This is a template, for new React Projects @ Acto.  
 More specifically, it is designed to be a gradle submodule (it is however not a requirement).
 
