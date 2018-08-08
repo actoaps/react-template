@@ -14,4 +14,4 @@ pipelines:
           - export ARTIFACT_NAME="template-version-$BITBUCKET_BUILD_NUMBER.tar.gz"
           - cd template && tar -zcf ../$ARTIFACT_NAME * && cd -
           - ls
-          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@$ARTIFACT_NAME
+          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./$ARTIFACT_NAME"
