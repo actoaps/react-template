@@ -8,4 +8,5 @@ pipelines:
           - node
         script:
           - bash ./gradlew build
-          - bash zip -r template.zip .
+          - apt install -y zip
+          - zip -r template.zip .
