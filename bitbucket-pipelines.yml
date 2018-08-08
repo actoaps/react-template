@@ -5,6 +5,7 @@ pipelines:
     - step:
         caches:
           - gradle
+          - node
         script:
           - bash ./gradlew build
-          - bash zip -r build.zip ./build
+          - bash zip -r template.zip .
