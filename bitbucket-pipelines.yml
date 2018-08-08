@@ -7,6 +7,4 @@ pipelines:
           - gradle
         script:
           - bash ./gradlew build
-    - step:
-        script:
           - bash zip -r build.zip ./build
