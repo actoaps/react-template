@@ -13,4 +13,5 @@ pipelines:
           - mkdir -p ./template && rsync -a . ./template --exclude .hg --exclude .gradle --exclude build --exclude node_modules
           - export ARTIFACT_NAME="template-version-$BITBUCKET_BUILD_NUMBER.tar.gz"
           - cd template && tar -zcf ../$ARTIFACT_NAME * && cd -
-          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./$ARTIFACT_NAME"
+#          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./$ARTIFACT_NAME"
+          - curl --upload-file "./$ARTIFACT_NAME" https://transfer.sh/iamatemplate.tar.gz
