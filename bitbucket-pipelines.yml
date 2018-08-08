@@ -11,4 +11,6 @@ pipelines:
           - apt-get update
           - apt-get install -y rsync
           - mkdir -p ./template && rsync -a . ./template --exclude .hg --exclude .gradle --exclude build --exclude node_modules
-          - cd template && tar -zcf ../template.tar.gz * && cd -
+          - export ARTIFACT_NAME="template-version-$BITBUCKET_BUILD_NUMBER.tar.gz"
+          - cd template && tar -zcf ../$ARTIFACT_NAME * && cd -
+          - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"$ARTIFACT_NAME"
