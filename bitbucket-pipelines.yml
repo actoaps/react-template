@@ -9,6 +9,6 @@ pipelines:
         script:
           - bash ./gradlew build
           - apt-get update
-          - apt-get install -y zip
+          - apt-get install -y rsync
           - mkdir -p ./template && rsync -a . ./template --exclude .hg --exclude .gradle --exclude build --exclude node_modules
           - cd template && tar -zcf ../template.tar.gz * && cd -
