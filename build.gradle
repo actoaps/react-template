@@ -4,6 +4,7 @@ plugins {
 }
 
 node {
+    yarnVersion = '1.9.4'
     version = '10.3.0'
     download = true
 }
