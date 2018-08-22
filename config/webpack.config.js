@@ -86,10 +86,10 @@ if (TARGET === 'development' || !TARGET) {
             port: 3000,
             historyApiFallback: true,
             hot: true,
-            proxy: {
+            proxy: [{
                 context: settings.proxy.paths,
                 target: `http://localhost:${settings.proxy.port}`
-            }
+            }]
         },
 
         entry: {
