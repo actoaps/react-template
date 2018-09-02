@@ -107,20 +107,19 @@ if (TARGET === 'development' || !TARGET) {
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                                ['env', {
+                                ['@babel/env', {
                                     targets: {
                                         browsers: settings.build.supportedBrowsers
                                     },
                                     modules: false
                                 }],
-                                'react',
-                                'stage-3'
+                                '@babel/preset-react'
                             ],
                             plugins: [
                                 'react-hot-loader/babel',
-                                ['transform-class-properties', { spec: true }],
-                                ['transform-es2015-classes', { loose: true }],
-                                ['syntax-dynamic-import']
+                                ['@babel/plugin-proposal-class-properties', { spec: true }],
+                                ['@babel/plugin-transform-classes', { loose: true }],
+                                ['@babel/plugin-syntax-dynamic-import']
                             ]
                         }
                     }]
@@ -160,20 +159,19 @@ if (TARGET === 'staging') {
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                                ['env', {
+                                ['@babel/env', {
                                     targets: {
                                         browsers: settings.build.supportedBrowsers
                                     },
                                     modules: false
                                 }],
-                                'react',
-                                'stage-3'
+                                '@babel/preset-react'
                             ],
                             plugins: [
                                 'react-hot-loader/babel',
-                                ['transform-class-properties', { spec: true }],
-                                ['transform-es2015-classes', { loose: true }],
-                                ['syntax-dynamic-import']
+                                ['@babel/plugin-proposal-class-properties', { spec: true }],
+                                ['@babel/plugin-transform-classes', { loose: true }],
+                                ['@babel/plugin-syntax-dynamic-import']
                             ]
                         }
                     }]
@@ -205,18 +203,17 @@ if (TARGET === 'production') {
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                                ['env', {
+                                ['@babel/env', {
                                     targets: {
                                         browsers: settings.build.supportedBrowsers
                                     },
                                     modules: false
                                 }],
-                                'react',
-                                'stage-3'
+                                '@babel/preset-react'
                             ],
                             plugins: [
-                                ['transform-class-properties', { spec: true }],
-                                ['syntax-dynamic-import']
+                                ['@babel/plugin-proposal-class-properties', { spec: true }],
+                                ['@babel/plugin-syntax-dynamic-import']
                             ]
                         }
                     }]
