@@ -119,7 +119,8 @@ if (TARGET === 'development' || !TARGET) {
                                 'react-hot-loader/babel',
                                 ['@babel/plugin-proposal-class-properties', { spec: true }],
                                 ['@babel/plugin-transform-classes', { loose: true }],
-                                ['@babel/plugin-syntax-dynamic-import']
+                                ['@babel/plugin-syntax-dynamic-import'],
+                                ['@babel/plugin-proposal-object-rest-spread']
                             ]
                         }
                     }]
@@ -171,7 +172,8 @@ if (TARGET === 'staging') {
                                 'react-hot-loader/babel',
                                 ['@babel/plugin-proposal-class-properties', { spec: true }],
                                 ['@babel/plugin-transform-classes', { loose: true }],
-                                ['@babel/plugin-syntax-dynamic-import']
+                                ['@babel/plugin-syntax-dynamic-import'],
+                                ['@babel/plugin-proposal-object-rest-spread']
                             ]
                         }
                     }]
@@ -213,7 +215,8 @@ if (TARGET === 'production') {
                             ],
                             plugins: [
                                 ['@babel/plugin-proposal-class-properties', { spec: true }],
-                                ['@babel/plugin-syntax-dynamic-import']
+                                ['@babel/plugin-syntax-dynamic-import'],
+                                ['@babel/plugin-proposal-object-rest-spread']
                             ]
                         }
                     }]
