@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://bitbucket.org/acto/react-project-template.git"
   },
-  "author": "Acto | Elias Jørgensen <ej@acto.dk>",
+  "author": "Acto | Elias Jï¿½rgensen <ej@acto.dk>",
   "license": "MIT",
   "homepage": "https://acto.dk",
   "dependencies": {
@@ -72,7 +72,8 @@
     "rules": {
       "indent": [
         "error",
-        4
+        4,
+        {"SwitchCase": 1}
       ],
       "react/jsx-indent": [
         2,
