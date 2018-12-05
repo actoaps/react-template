@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env cypress run --browser chrome",
     "test-headless": "cross-env cypress run",
-    "test-ci": "cross-env start-server-and-test dev http://localhost:3000 test-headless",
+    "test-ci": "cross-env start-server-and-test dev http-get://localhost:3000 test-headless",
     "lint": "cross-env eslint src/**/**.js config/**/**.js test/**/**.js",
     "lint-fix": "cross-env eslint src/**/**.js config/**/**.js test/**/**.js --fix",
     "profile": "cross-env NODE_ENV=production webpack --config=config/webpack.config.js --profile --json > stats.json",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://bitbucket.org/acto/react-project-template.git"
   },
-  "author": "Acto | Elias Jørgensen <ej@acto.dk>",
+  "author": "Acto | Elias J�rgensen <ej@acto.dk>",
   "license": "MIT",
   "homepage": "https://acto.dk",
   "dependencies": {
@@ -71,7 +71,8 @@
     "rules": {
       "indent": [
         "error",
-        4
+        4,
+        {"SwitchCase": 1}
       ],
       "react/jsx-indent": [
         2,
