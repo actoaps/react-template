@@ -225,11 +225,11 @@ if (TARGET === 'production') {
         },
 
         plugins: [
-            new CleanWebpackPlugin(PATHS.build, {root: PATHS.root}),
+            new CleanWebpackPlugin(PATHS.build, { root: PATHS.root }),
             new Webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('production')
             }),
-            new Webpack.LoaderOptionsPlugin({minimize: true}),
+            new Webpack.LoaderOptionsPlugin({ minimize: true }),
             new Webpack.optimize.ModuleConcatenationPlugin(),
             new MinifyPlugin({}, {
                 comments: false
