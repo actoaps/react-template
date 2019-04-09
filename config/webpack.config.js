@@ -98,6 +98,12 @@ if (TARGET === 'development' || !TARGET) {
             ]
         },
 
+        resolve: {
+            alias: {
+                'react-dom': '@hot-loader/react-dom'
+            }
+        },
+
         module: {
             rules: [
                 {
@@ -106,6 +112,7 @@ if (TARGET === 'development' || !TARGET) {
                     use: [{
                         loader: 'babel-loader',
                         options: {
+                            cacheDirectory: true,
                             presets: [
                                 ['@babel/env', {
                                     targets: {
@@ -169,7 +176,6 @@ if (TARGET === 'staging') {
                                 '@babel/preset-react'
                             ],
                             plugins: [
-                                'react-hot-loader/babel',
                                 ['@babel/plugin-proposal-class-properties', { spec: true }],
                                 ['@babel/plugin-transform-classes', { loose: true }],
                                 ['@babel/plugin-syntax-dynamic-import'],
@@ -225,7 +231,7 @@ if (TARGET === 'production') {
         },
 
         plugins: [
-            new CleanWebpackPlugin(PATHS.build, { root: PATHS.root }),
+            new CleanWebpackPlugin(),
             new Webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('production')
             }),
