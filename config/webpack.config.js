@@ -2,8 +2,8 @@
 const Path = require('path')
 const Webpack = require('webpack')
 const merge = require('webpack-merge')
-const HtmlWebpackPLugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
@@ -62,7 +62,7 @@ const common = {
     },
 
     plugins: [
-        new HtmlWebpackPLugin({
+        new HtmlWebpackPlugin({
             template: Path.resolve(PATHS.public, 'index.ejs'),
             htmlTheme: settings.html.theme,
             title: settings.html.title
@@ -139,7 +139,6 @@ if (TARGET === 'development' || !TARGET) {
             new Webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('development')
             }),
-            new Webpack.NamedModulesPlugin(),
             new Webpack.HotModuleReplacementPlugin()
         ]
     })
@@ -191,7 +190,6 @@ if (TARGET === 'staging') {
             new Webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('development')
             }),
-            new Webpack.NamedModulesPlugin(),
             new Webpack.HotModuleReplacementPlugin()
         ]
     })
@@ -236,7 +234,6 @@ if (TARGET === 'production') {
                 'process.env.NODE_ENV': JSON.stringify('production')
             }),
             new Webpack.LoaderOptionsPlugin({ minimize: true }),
-            new Webpack.optimize.ModuleConcatenationPlugin(),
             new MinifyPlugin({}, {
                 comments: false
             }),
