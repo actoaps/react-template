@@ -4,7 +4,6 @@ const Webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MinifyPlugin = require('babel-minify-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const TARGET = process.env.NODE_ENV
@@ -189,8 +188,7 @@ if (TARGET === 'staging') {
         plugins: [
             new Webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('development')
-            }),
-            new Webpack.HotModuleReplacementPlugin()
+            })
         ]
     })
 }
@@ -234,9 +232,6 @@ if (TARGET === 'production') {
                 'process.env.NODE_ENV': JSON.stringify('production')
             }),
             new Webpack.LoaderOptionsPlugin({ minimize: true }),
-            new MinifyPlugin({}, {
-                comments: false
-            }),
             new Webpack.optimize.AggressiveMergingPlugin()
         ]
     })
