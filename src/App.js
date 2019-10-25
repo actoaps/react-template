@@ -8,15 +8,17 @@ import LoginError from './pages/LoginError'
 import Home from './pages/Home'
 
 const App = () => (
-    <Router>
-        <Switch>
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/loginredirect' component={LoginRedirect} />
-            <Route exact path='/loginerror' component={LoginError} />
+    <React.StrictMode>
+        <Router>
+            <Switch>
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/loginredirect' component={LoginRedirect} />
+                <Route exact path='/loginerror' component={LoginError} />
 
-            <Route exact path='/' component={requireAuth(Home)} />
-        </Switch>
-    </Router>
+                <Route exact path='/' component={requireAuth(Home)} />
+            </Switch>
+        </Router>
+    </React.StrictMode>
 )
 
 export default hot(App)
