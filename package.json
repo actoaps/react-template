@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://bitbucket.org/acto/react-project-template.git"
   },
-  "author": "Acto | Elias J�rgensen <ej@acto.dk>",
+  "author": "Acto | Elias Jørgensen <ej@acto.dk>",
   "license": "MIT",
   "homepage": "https://acto.dk",
   "dependencies": {
