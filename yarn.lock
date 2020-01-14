@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@acto/ajax@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@acto/ajax/-/ajax-4.2.1.tgz#437aac8a45e3a020502ab18c042e3aade4330531"
-  integrity sha512-q3Mfar23N6itX626bdmalkPHGInrCtl5aFLjx9/PFsRcZnEo0YekfmrlKOTQDNYlxPYPAiOe2K1ND1ep1KRnzg==
+"@acto/ajax@5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@acto/ajax/-/ajax-5.0.3.tgz#3ab4f05aceb10cbf0b57cacfca2bcd4e71592624"
+  integrity sha512-oTy5D49WliyfCmbbnAdfq9IwR31ChiE0OKxp50bFalTvihLU/e5RaPT3fpAroaDW85cfVUXLL7aDMwq0eNzNtQ==
   dependencies:
-    wretch "1.5.2"
+    wretch "1.5.5"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
@@ -7675,10 +7675,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
-wretch@1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/wretch/-/wretch-1.5.2.tgz#e9ca28a041cf5cbeb68e0fc4598dac85057e91de"
-  integrity sha512-yHFHZVK3aiwtW4dMW4LpN7hJJepCbbYJTFutOfWZLfBSTsjLJa8cobPmSh6AgTEIMwryHeiJcHG+lP1IZHG2vg==
+wretch@1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/wretch/-/wretch-1.5.5.tgz#0facb7c225aacf7fd145bdbb384d2963e6b23831"
+  integrity sha512-wGd+AkjuAyg+kvLrG5v2Irp7ShltU5+iscqUs13K/ZLS+thuF6s2buFT2UZfKedEuxY+pyTL7+zQ/Qd3g9uO7A==
 
 write@1.0.3:
   version "1.0.3"
