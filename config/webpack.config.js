@@ -123,10 +123,6 @@ if (TARGET === 'development' || !TARGET) {
                             ],
                             plugins: [
                                 'react-hot-loader/babel',
-                                ['@babel/plugin-proposal-class-properties', { spec: true }],
-                                ['@babel/plugin-transform-classes', { loose: true }],
-                                ['@babel/plugin-syntax-dynamic-import'],
-                                ['@babel/plugin-proposal-object-rest-spread']
                             ]
                         }
                     }]
@@ -139,56 +135,6 @@ if (TARGET === 'development' || !TARGET) {
                 'process.env.NODE_ENV': JSON.stringify('development')
             }),
             new Webpack.HotModuleReplacementPlugin()
-        ]
-    })
-}
-
-// When building for staging
-if (TARGET === 'staging') {
-    module.exports = merge.smart(common, {
-        devtool: 'source-map',
-
-        mode: 'development',
-
-        entry: {
-            app: [
-                Path.resolve(PATHS.src, 'index.js')
-            ]
-        },
-
-        module: {
-            rules: [
-                {
-                    test: /\.js$/,
-                    include: [PATHS.src],
-                    use: [{
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                ['@babel/env', {
-                                    targets: {
-                                        browsers: settings.build.supportedBrowsers
-                                    },
-                                    modules: false
-                                }],
-                                '@babel/preset-react'
-                            ],
-                            plugins: [
-                                ['@babel/plugin-proposal-class-properties', { spec: true }],
-                                ['@babel/plugin-transform-classes', { loose: true }],
-                                ['@babel/plugin-syntax-dynamic-import'],
-                                ['@babel/plugin-proposal-object-rest-spread']
-                            ]
-                        }
-                    }]
-                }
-            ]
-        },
-
-        plugins: [
-            new Webpack.DefinePlugin({
-                'process.env.NODE_ENV': JSON.stringify('development')
-            })
         ]
     })
 }
@@ -214,11 +160,6 @@ if (TARGET === 'production') {
                                     modules: false
                                 }],
                                 '@babel/preset-react'
-                            ],
-                            plugins: [
-                                ['@babel/plugin-proposal-class-properties', { spec: true }],
-                                ['@babel/plugin-syntax-dynamic-import'],
-                                ['@babel/plugin-proposal-object-rest-spread']
                             ]
                         }
                     }]
