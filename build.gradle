@@ -1,11 +1,11 @@
 plugins {
-    id "com.moowork.node" version "1.2.0"
+    id "com.github.node-gradle.node" version "2.2.1"
     id 'base'
 }
 
 node {
-    yarnVersion = '1.9.4'
-    version = '10.16.0'
+    yarnVersion = '1.21.0'
+    version = '12.14.1'
     download = true
 }
 
