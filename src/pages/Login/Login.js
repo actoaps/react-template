@@ -2,12 +2,12 @@ import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import withStyles from '@material-ui/core/styles/withStyles'
 
 // Login buttons
 import LoginButton from './components/LoginButton'
+import { makeStyles } from '@material-ui/core'
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
     layout: {
         width: 'auto',
         display: 'block', // Fix IE 11 issue.
@@ -29,11 +29,13 @@ const styles = theme => ({
     button: {
         margin: 10
     }
-})
+}))
 
-function Login ({ classes }) {
+function Login () {
+    const classes = useStyles()
+
     return (
-        <React.Fragment>
+        <>
             <CssBaseline />
             <main className={classes.layout}>
                 <Paper className={classes.paper}>
@@ -50,8 +52,8 @@ function Login ({ classes }) {
                     </form>
                 </Paper>
             </main>
-        </React.Fragment>
+        </>
     )
 }
 
-export default withStyles(styles)(Login)
+export default Login

@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { saveJwtTokenToStorage } from '../util/auth'
 
-export default function LoginRedirect (props) {
+export default function LoginRedirect () {
     const hasJwt = location.hash.includes('#')
     const jwtString = location.hash.replace('#', '')
 

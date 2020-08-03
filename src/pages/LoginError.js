@@ -1,12 +1,10 @@
 import React from 'react'
-import withStyles from '@material-ui/core/styles/withStyles'
-import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button/index'
 import { Link } from 'react-router-dom'
 
-import { Grid } from '@material-ui/core/index'
+import { Grid, makeStyles } from '@material-ui/core/index'
 
-const styles = {
+const useStyles = makeStyles({
     body: {
         marginTop: '5vh'
     },
@@ -20,13 +18,14 @@ const styles = {
     backButton: {
         marginTop: '8vh'
     }
-}
+})
 
 const LoginError = props => {
-    const { classes } = props
+    const classes = useStyles()
+
     return (
-        <Grid className={classes.body} justify={'center'}>
-            <img className={classes.f2lLogo} src={'/assets/pictures/logo.png'} />
+        <Grid className={classes.body} justify='center'>
+            <img className={classes.f2lLogo} src='/assets/pictures/logo.png' />
             <h1 className={classes.errorMessage}>Der opstod en uventet fejl. Prøv venligst igen.</h1>
             <h1>Kontakt venligst Acto.dk i tilfælde af fejlen opstår igen.</h1>
             <Button className={classes.backButton} color='primary' variant='contained' component={Link} to='/login'>
@@ -36,8 +35,4 @@ const LoginError = props => {
     )
 }
 
-LoginError.propTypes = {
-    classes: PropTypes.any.isRequired
-}
-
-export default withStyles(styles)(LoginError)
+export default LoginError

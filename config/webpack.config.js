@@ -1,7 +1,7 @@
 // Modules
 const Path = require('path')
 const Webpack = require('webpack')
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -66,16 +66,20 @@ const common = {
             htmlTheme: settings.html.theme,
             title: settings.html.title
         }),
-        new CopyWebpackPlugin([{
-            from: `${PATHS.public}`,
-            ignore: ['index.ejs']
-        }])
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: `${PATHS.public}`,
+                globOptions: {
+                    ignore: ['index.ejs']
+                }
+            }]
+        })
     ]
 }
 
 // When in development mode
 if (TARGET === 'development' || !TARGET) {
-    module.exports = merge.smart(common, {
+    module.exports = merge(common, {
         devtool: 'cheap-module-source-map',
 
         mode: 'development',
@@ -87,7 +91,8 @@ if (TARGET === 'development' || !TARGET) {
             hot: true,
             proxy: [{
                 context: settings.proxy.paths,
-                target: `http://localhost:${settings.proxy.port}`
+                target: process.env.PROXY_ENV === 'staging' ? 'https://mystique.acto.dk' : `http://localhost:${settings.proxy.port}`,
+                secure: false
             }]
         },
 
@@ -116,13 +121,12 @@ if (TARGET === 'development' || !TARGET) {
                                 ['@babel/env', {
                                     targets: {
                                         browsers: settings.build.supportedBrowsers
-                                    },
-                                    modules: false
+                                    }
                                 }],
                                 '@babel/preset-react'
                             ],
                             plugins: [
-                                'react-hot-loader/babel',
+                                'react-hot-loader/babel'
                             ]
                         }
                     }]
