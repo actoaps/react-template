@@ -96,12 +96,6 @@ if (TARGET === 'development' || !TARGET) {
             }]
         },
 
-        entry: {
-            app: [
-                Path.resolve(PATHS.src, 'index.js')
-            ]
-        },
-
         resolve: {
             alias: {
                 'react-dom': '@hot-loader/react-dom'
