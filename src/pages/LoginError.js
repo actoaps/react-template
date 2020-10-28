@@ -1,8 +1,8 @@
 import React from 'react'
-import Button from '@material-ui/core/Button/index'
+import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 
-import { Grid, makeStyles } from '@material-ui/core/index'
+import { Grid, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
     body: {

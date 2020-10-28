@@ -11,6 +11,7 @@ module.exports = {
     },
     proxy: {
         paths: ['/api', '/google', '/economic'],
+        stagingEnvUrl: 'https://marvelhero.acto.dk',
         port: 8080
     }
 }

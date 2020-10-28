@@ -24,33 +24,8 @@ const common = {
     output: {
         path: PATHS.build,
         publicPath: settings.build.publicPath,
-        filename: `${settings.build.mainBundleName}.bundle.[hash].js`,
+        filename: `${settings.build.mainBundleName}.bundle.[chunkhash].js`,
         chunkFilename: '[name].bundle.[chunkhash].js'
-    },
-
-    optimization: {
-        splitChunks: {
-            chunks: 'async',
-            minSize: 30000,
-            minChunks: 1,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
-            name: true,
-            cacheGroups: {
-                default: {
-                    minChunks: 2,
-                    priority: -20,
-                    reuseExistingChunk: true
-                },
-                vendors: {
-                    chunks: 'initial',
-                    name: 'vendor',
-                    test: new RegExp(`[\\\\/](${settings.build.vendorLibs})[\\\\/]`),
-                    priority: -10
-                }
-            }
-        }
     },
 
     target: 'web',
@@ -91,7 +66,7 @@ if (TARGET === 'development' || !TARGET) {
             hot: true,
             proxy: [{
                 context: settings.proxy.paths,
-                target: process.env.PROXY_ENV === 'staging' ? 'https://mystique.acto.dk' : `http://localhost:${settings.proxy.port}`,
+                target: process.env.PROXY_ENV === 'staging' ? settings.proxy.stagingEnvUrl : `http://localhost:${settings.proxy.port}`,
                 secure: false
             }]
         },
@@ -105,7 +80,7 @@ if (TARGET === 'development' || !TARGET) {
         module: {
             rules: [
                 {
-                    test: /\.js$/,
+                    test: /\.jsx?$/,
                     include: [PATHS.src],
                     use: [{
                         loader: 'babel-loader',
@@ -120,7 +95,8 @@ if (TARGET === 'development' || !TARGET) {
                                 '@babel/preset-react'
                             ],
                             plugins: [
-                                'react-hot-loader/babel'
+                                'react-hot-loader/babel',
+                                'transform-mui-imports'
                             ]
                         }
                     }]
@@ -157,7 +133,10 @@ if (TARGET === 'production') {
                                     },
                                     modules: false
                                 }],
-                                '@babel/preset-react'
+                                '@babel/preset-react',
+                            ],
+                            plugins: [
+                                'transform-mui-imports'
                             ]
                         }
                     }]
