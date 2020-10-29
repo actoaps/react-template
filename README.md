@@ -10,14 +10,14 @@ Pages for our standard [Fafnir](https://bitbucket.org/acto/fafnir-sso/src/defaul
 * [Acto Ajax](https://www.npmjs.com/package/@acto/ajax)  
 * A series of often-used components and hooks
 * [Formik](https://github.com/jaredpalmer/formik) + [Yup](https://github.com/jquense/yup), for non rage inducing form handling
-* Webpack v4 setup, which allows HMR and [code-splitting using dynamic imports](https://reactjs.org/docs/code-splitting.html#reactlazy)  
+* Webpack v5 setup, which allows HMR and [code-splitting using dynamic imports](https://reactjs.org/docs/code-splitting.html#reactlazy)  
 * [Cypress](https://www.cypress.io/) testing suite  
 * [Eslint](https://eslint.org/), with the [StandardJS](https://standardjs.com/) styleguide
 * Nginx config, including a dummy reverse-proxy for your API  
 * Dockerfile, for building your webserver, containing your react build  
 
 ## Prerequisites
-* Node >= v10  
+* Node >= v14  
 * Yarn  
 * Chrome browser  
 * Docker  
