@@ -3914,16 +3914,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-standard-react@npm:11.0.1":
-  version: 11.0.1
-  resolution: "eslint-config-standard-react@npm:11.0.1"
-  peerDependencies:
-    eslint: ^7.12.1
-    eslint-plugin-react: ^7.21.5
-  checksum: 39e3d150e4c8707584de67a799b7e20aca400488ca0f699370a801345fb0ca63a5123a0d460ff5eedd92af40d0a450af55584bacdf7a049ddf45a3c54a3fe9af
-  languageName: node
-  linkType: hard
-
 "eslint-config-standard@npm:16.0.3":
   version: 16.0.3
   resolution: "eslint-config-standard@npm:16.0.3"
@@ -7284,7 +7274,6 @@ fsevents@~2.3.2:
     cypress: 8.4.1
     eslint: 7.32.0
     eslint-config-standard: 16.0.3
-    eslint-config-standard-react: 11.0.1
     eslint-plugin-cypress: 2.12.1
     eslint-plugin-import: 2.24.2
     eslint-plugin-node: 11.1.0

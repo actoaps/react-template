@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/acto/react-project-template.git"
+    "url": "git+https://github.com/actoaps/react-template.git"
   },
   "author": "Acto | Elias Jørgensen <ej@acto.dk>",
   "license": "MIT",
@@ -47,7 +47,6 @@
     "cypress": "8.4.1",
     "eslint": "7.32.0",
     "eslint-config-standard": "16.0.3",
-    "eslint-config-standard-react": "11.0.1",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-import": "2.24.2",
     "eslint-plugin-node": "11.1.0",
