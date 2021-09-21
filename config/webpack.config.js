@@ -5,6 +5,7 @@ const { merge } = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const TARGET = process.env.NODE_ENV
 const settings = require('./settings')
@@ -60,21 +61,22 @@ if (TARGET === 'development' || !TARGET) {
         mode: 'development',
 
         devServer: {
-            contentBase: PATHS.build,
+            static: {
+                directory: PATHS.build
+            },
             port: 3000,
             historyApiFallback: true,
             hot: true,
-            proxy: [{
-                context: settings.proxy.paths,
-                target: process.env.PROXY_ENV === 'staging' ? settings.proxy.stagingEnvUrl : `http://localhost:${settings.proxy.port}`,
-                secure: false
-            }]
-        },
-
-        resolve: {
-            alias: {
-                'react-dom': '@hot-loader/react-dom'
-            }
+            proxy: [
+                {
+                    context: settings.proxy.paths,
+                    target:
+                        process.env.PROXY_ENV === 'staging'
+                            ? settings.proxy.stagingEnvUrl
+                            : `http://localhost:${settings.proxy.port}`,
+                    secure: false
+                }
+            ]
         },
 
         module: {
@@ -92,11 +94,13 @@ if (TARGET === 'development' || !TARGET) {
                                         browsers: settings.build.supportedBrowsers
                                     }
                                 }],
-                                '@babel/preset-react'
+                                ['@babel/preset-react', {
+                                    runtime: 'automatic'
+                                }]
                             ],
                             plugins: [
-                                'react-hot-loader/babel',
-                                'transform-mui-imports'
+                                'transform-mui-imports',
+                                'react-refresh/babel'
                             ]
                         }
                     }]
@@ -108,7 +112,7 @@ if (TARGET === 'development' || !TARGET) {
             new Webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('development')
             }),
-            new Webpack.HotModuleReplacementPlugin()
+            new ReactRefreshWebpackPlugin()
         ]
     })
 }
@@ -133,7 +137,9 @@ if (TARGET === 'production') {
                                     },
                                     modules: false
                                 }],
-                                '@babel/preset-react',
+                                ['@babel/preset-react', {
+                                    runtime: 'automatic'
+                                }]
                             ],
                             plugins: [
                                 'transform-mui-imports'

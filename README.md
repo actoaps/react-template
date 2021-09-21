@@ -1,26 +1,27 @@
 # React Template
-This is a template, for new React Projects @ Acto.  
-More specifically, it is designed to be a gradle submodule (it is however not a requirement).  
-Pages for our standard [Fafnir](https://bitbucket.org/acto/fafnir-sso/src/default/) login flow are included.  
+This is a template, for new React Projects @ Acto.
+More specifically, it is designed to be a gradle submodule (it is however not a requirement).
+Pages for our standard [Fafnir](https://bitbucket.org/acto/fafnir-sso/src/default/) login flow are included.
 
 ## Included in the template
-* React  
-* React-Router  
-* Material UI  
-* [Acto Ajax](https://www.npmjs.com/package/@acto/ajax)  
+* React
+* React-Router
+* Material UI v5
+* [Acto Ajax](https://www.npmjs.com/package/@acto/ajax)
 * A series of often-used components and hooks
 * [Formik](https://github.com/jaredpalmer/formik) + [Yup](https://github.com/jquense/yup), for non rage inducing form handling
-* Webpack v5 setup, which allows HMR and [code-splitting using dynamic imports](https://reactjs.org/docs/code-splitting.html#reactlazy)  
-* [Cypress](https://www.cypress.io/) testing suite  
+* React Query
+* Webpack v5 setup, which allows HMR and [code-splitting using dynamic imports](https://reactjs.org/docs/code-splitting.html#reactlazy)
+* [Cypress](https://www.cypress.io/) testing suite
 * [Eslint](https://eslint.org/), with the [StandardJS](https://standardjs.com/) styleguide
-* Nginx config, including a dummy reverse-proxy for your API  
-* Dockerfile, for building your webserver, containing your react build  
+* Nginx config, including a dummy reverse-proxy for your API
+* Dockerfile, for building your webserver, containing your react build
 
 ## Prerequisites
-* Node >= v14  
-* Yarn  
-* Chrome browser  
-* Docker  
+* Node >= v15
+* Yarn
+* Chrome browser
+* Docker
 
 ## Usage
 1. Clone the repo, and copy the contents to your desired location

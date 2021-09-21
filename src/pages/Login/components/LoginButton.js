@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
-import React from 'react'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 
 export default function LoginButton (props) {
     return (
-        <Button color='primary' variant='contained' href={props.url} className={props.className}>
+        <Button color='primary' variant='contained' href={props.url}>
             {props.text}
         </Button>
     )
@@ -12,6 +11,5 @@ export default function LoginButton (props) {
 
 LoginButton.propTypes = {
     text: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    className: PropTypes.string
+    url: PropTypes.string.isRequired
 }

@@ -23,11 +23,13 @@
   "homepage": "https://acto.dk",
   "dependencies": {
     "@acto/ajax": "6.0.1",
-    "@material-ui/core": "4.12.3",
+    "@emotion/react": "11.4.1",
+    "@emotion/styled": "11.3.0",
     "@mui/material": "5.0.0",
     "formik": "2.2.9",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-query": "3.24.3",
     "react-router-dom": "5.3.0",
     "yup": "0.32.9"
   },
@@ -35,6 +37,7 @@
     "@babel/core": "7.15.5",
     "@babel/preset-env": "7.15.6",
     "@babel/preset-react": "7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.1",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
     "babel-plugin-transform-mui-imports": "0.2.0",
@@ -53,53 +56,11 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "html-webpack-plugin": "5.3.2",
     "prop-types": "15.7.2",
+    "react-refresh": "0.10.0",
     "start-server-and-test": "1.14.0",
     "webpack": "5.53.0",
     "webpack-cli": "4.8.0",
     "webpack-dev-server": "4.2.1",
     "webpack-merge": "5.8.0"
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 2021,
-      "sourceType": "module"
-    },
-    "extends": [
-      "plugin:react/recommended",
-      "standard"
-    ],
-    "rules": {
-      "indent": [
-        "error",
-        4,
-        {
-          "SwitchCase": 1
-        }
-      ],
-      "react/jsx-indent": [
-        2,
-        4
-      ],
-      "react/jsx-indent-props": [
-        2,
-        4
-      ],
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
-    },
-    "plugins": [
-      "cypress",
-      "react-hooks",
-      "react"
-    ],
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "node": true,
-      "cypress/globals": true
-    }
   }
 }

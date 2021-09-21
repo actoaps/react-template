@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 import Loading from './Loading'
 
 export default function LazyLoad ({ component, ...rest }) {
-    const Component = React.lazy(() => component)
+    const Component = lazy(() => component)
 
     return (
         <Suspense fallback={<Loading />}>
