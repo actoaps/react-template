@@ -14,7 +14,7 @@ const settings = require('./settings')
 const PATHS = {
     src: Path.resolve(__dirname, '../src'),
     public: Path.resolve(__dirname, '../public'),
-    build: Path.resolve(__dirname, '../build'),
+    build: Path.resolve(__dirname, '../dist'),
     modules: Path.resolve(__dirname, '../node_modules'),
     root: Path.resolve(__dirname, '..')
 }
